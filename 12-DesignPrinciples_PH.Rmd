@@ -181,7 +181,7 @@ Next, we declare the estimators we use for recovering the estimand. While there 
 dim <- declare_estimator(Y ~ D, estimand = estimand,  
           model =  difference_in_means, label = "DIM") #PH: Difference-in-means (Mean of treatment group - mean of control group)
 
-did <- declare_estimator(Y - tree_cover_ha ~ D, 
+did <- declare_estimator(Y - WQI ~ D, 
                          estimand = estimand,  
           model =  difference_in_means, label = "DID") #PH: Difference-in-differences ([Mean of treatment group @ endline - Mean of treatment group @ baseline] - [Mean of control group @ endline - mean of control group @ baseline])
 ```
@@ -202,7 +202,7 @@ design <- population + potential_outcomes + sampling +
 At this stage, we can calculate various features of the design that we have specified
 
 ```{r diagnosis, cache=TRUE}
-diagnosis <- diagnose_design(design, sims=5000)
+diagnosis <- diagnose_design(design, sims=1000)
 diagnosis$diagnosands_df[,c(1,3,5,9,11)] %>%
   kable()
 ```
