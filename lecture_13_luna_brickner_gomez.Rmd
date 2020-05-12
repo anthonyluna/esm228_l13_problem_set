@@ -1,7 +1,7 @@
 ---
 title: "Session 12: Design Principles"
 subtitle: "ESM228: Monitoring & Evaluation"
-author: "Mark Buntaine"
+author: "Anthony Luna, Jessica Gomez, and Maggie Brickner"
 output: beamer_presentation
 header-includes:
 - \usepackage{caption}
